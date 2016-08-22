@@ -21,7 +21,7 @@ __version__ = '0.33.0'
 X_MS_VERSION = '2015-07-08'
 
 # UserAgent string sample: 'Azure-Storage/0.32.0 (Python CPython 3.4.2; Windows 8)'
-USER_AGENT_STRING = 'Azure-Storage/{} (Python {} {}; {} {})'.format(__version__, platform.python_implementation(), platform.python_version(), platform.system(), platform.release())
+USER_AGENT_STRING = 'Azure-Storage/{0} (Python {1} {2}; {3} {4})'.format(__version__, platform.python_implementation(), platform.python_version(), platform.system(), platform.release())
 
 # Live ServiceClient URLs
 SERVICE_HOST_BASE = 'core.windows.net'

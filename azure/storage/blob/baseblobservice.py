@@ -233,7 +233,7 @@ class BaseBlobService(StorageClient):
         :rtype: str
         '''
 
-        url = '{}://{}/{}/{}'.format(
+        url = '{0}://{1}/{2}/{3}'.format(
             protocol or self.protocol,
             self.primary_endpoint,
             container_name,

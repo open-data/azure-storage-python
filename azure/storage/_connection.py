@@ -63,8 +63,8 @@ class _ServiceParameters(object):
             # Only set the account key if a sas_token is not present to allow sas to be used with the emulator
             self.account_key = DEV_ACCOUNT_KEY if not self.sas_token else None
 
-            self.primary_endpoint = '{}/{}'.format(_EMULATOR_ENDPOINTS[service], self.account_name)
-            self.secondary_endpoint = '{}/{}-secondary'.format(_EMULATOR_ENDPOINTS[service], self.account_name)
+            self.primary_endpoint = '{0}/{1}'.format(_EMULATOR_ENDPOINTS[service], self.account_name)
+            self.secondary_endpoint = '{0}/{1}-secondary'.format(_EMULATOR_ENDPOINTS[service], self.account_name)
         else:
             # Strip whitespace from the key
             if self.account_key:
@@ -84,11 +84,11 @@ class _ServiceParameters(object):
             else:
                 if not self.account_name:
                     raise ValueError(_ERROR_STORAGE_MISSING_INFO)         
-                self.primary_endpoint = '{}.{}.{}'.format(self.account_name, service, endpoint_suffix)
+                self.primary_endpoint = '{0}.{1}.{2}'.format(self.account_name, service, endpoint_suffix)
             
             # Setup the secondary endpoint
             if self.account_name:
-                self.secondary_endpoint = '{}-secondary.{}.{}'.format(self.account_name, service, endpoint_suffix)
+                self.secondary_endpoint = '{0}-secondary.{1}.{2}'.format(self.account_name, service, endpoint_suffix)
             else:
                 self.secondary_endpoint = None
 
